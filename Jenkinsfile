@@ -5,23 +5,24 @@ pipeline {
             args '-p 3000:3000'
         }
     }
-     environment {
+    environment {
             CI = 'true'
-        }
+    }
     stages {
         stage('Build') {
             steps {
                 sh 'npm install'
             }
         }
-         stage('Test') {
+        stage('Test') {
             steps {
                 sh './jenkins/scripts/test.sh'
             }
         }
         stage('Deployment') {
             steps {
-                echo "Deploying..."
+                echo 'Deploying...'
             }
+        }
     }
 }
