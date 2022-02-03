@@ -1,13 +1,18 @@
-import './App.css';
+import "leaflet/dist/leaflet.css"
 
-function App() {
+import React from "react"
+
+import MapPage from "./components/MapPage"
+import { Container } from "@material-ui/core"
+
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-    <p>Hello world</p>
-      </header>
-    </div>
-  );
+    <Container>
+      <MapPage></MapPage>
+    </Container>
+
+  )
 }
 
-export default App;
+export default App
