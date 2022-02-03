@@ -1,15 +1,15 @@
-import React, { useState } from "react"
+import React from "react"
 
-import { Container } from '@material-ui/core'
+import { Container } from "@material-ui/core"
 
 const LandingPage = () => {
-  
-  return ( 
 
-  <Container maxWidth="sm"></Container>
+  return (
+
+    <Container maxWidth="sm"></Container>
 
   )
 }
 
 
-export default landingPage
+export default LandingPage
