@@ -35,12 +35,11 @@
         }
       ],
       "linebreak-style": [
-        "error",
-        "windows"
+        0
       ],
       "quotes": [
         "error",
-        "single"
+        "double"
       ],
       "semi": [
         "error",
