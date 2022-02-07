@@ -1,13 +1,9 @@
 import React from "react"
 
-import { Container } from "@material-ui/core"
-
 const LandingPage = () => {
 
   return (
-
-    <Container maxWidth="sm"></Container>
-
+    <p className="text-center text-green-600 font-bold"></p>
   )
 }
 

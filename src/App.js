@@ -1,15 +1,14 @@
-import "leaflet/dist/leaflet.css"
-
+import "./App.css"
 import React from "react"
 
-import MapPage from "./components/MapPage"
 import { Container } from "@material-ui/core"
+import LandingPage from "./components/LandingPage"
 
 const App = () => {
 
   return (
     <Container>
-      <MapPage></MapPage>
+      <LandingPage></LandingPage>
     </Container>
 
   )
