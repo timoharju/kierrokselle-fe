@@ -1,15 +1,15 @@
 import "./App.css"
-import React from "react"
+import React, { useState } from "react"
 
-import { Container } from "@material-ui/core"
 import LandingPage from "./components/LandingPage"
 
 const App = () => {
+  const [showSidebar, setShowSidebar] = useState(true)
 
   return (
-    <Container>
-      <LandingPage></LandingPage>
-    </Container>
+    <div className="bg-black h-screen flex-grow">
+      <LandingPage showSidebar={showSidebar} setShowSidebar={setShowSidebar}></LandingPage>
+    </div>
 
   )
 }
