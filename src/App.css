@@ -7,3 +7,6 @@
   background-color: #1e3448;
   
 }
+iframe {
+  display: none;
+}

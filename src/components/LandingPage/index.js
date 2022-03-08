@@ -1,21 +1,11 @@
 import React from "react"
-import MobileSidebar from "./MobileSidebar"
-import Sidebar from "./DefaultSidebar"
-import TranslatedSidebar from "./TranslatedSidebar"
 import MapButton from "./MapButton"
 
-const LandingPage = ({ showSidebar, setShowSidebar }) => {
+
+const LandingPage = () => {
   return (
-    <div className="relative h-screen flex  ">
-      {showSidebar ? ( <Sidebar></Sidebar>) : (
-        <TranslatedSidebar showSidebar={showSidebar}></TranslatedSidebar>
-      )}
-      <div className="flex-1">
-        <MobileSidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar}></MobileSidebar>
-        <div className="flex flex-initial justify-center items-center h-5/6">
-          <MapButton></MapButton>
-        </div>
-      </div>
+    <div className="flex flex-1 justify-center items-center md:h-screen h-screen relative">
+      <MapButton></MapButton>
     </div>
   )
 }
