@@ -8,6 +8,7 @@ import Nav from "./components/Nav"
 
 const App = () => {
   const [showSidebar, setShowSidebar] = useState(true)
+  const [showMarkers, setBooleanMarker] = useState(false)
 
   return (
     <div className="bg-black h-screen flex-none   ">
@@ -16,11 +17,11 @@ const App = () => {
         <Routes>
           <Route
             exact path="/" element={
-              <LandingPage showSidebar={showSidebar} setShowSidebar={setShowSidebar}/>
+              <LandingPage/>
             }/>
           <Route
             path="/map" element={
-              <MapPage/>
+              <MapPage showMarkers={showMarkers} setBooleanMaerker={setBooleanMarker}/>
             }/>
         </Routes>
       </div>
