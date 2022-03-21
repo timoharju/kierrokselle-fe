@@ -1,16 +1,19 @@
 import React from "react"
 import MobileSidebar from "./MobileSidebar"
 import DefaultSidebar from "./DefaultSidebar"
-import TranslatedSidebar from "./TranslatedSidebar"
+import ToggleableSidebar from "./ToggleableSidebar"
+import { useSelector } from "react-redux"
 
 
-const Nav = ({ showSidebar, setShowSidebar }) => {
+const Nav = () => {
+
+  const isToggled = useSelector(state => state.isToggled)
   return (
     <>
-      {showSidebar ? ( <DefaultSidebar></DefaultSidebar>) : (
-        <TranslatedSidebar showSidebar={showSidebar}></TranslatedSidebar>
+      {isToggled ? ( <DefaultSidebar></DefaultSidebar>) : (
+        <ToggleableSidebar></ToggleableSidebar>
       )}
-      <MobileSidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar}></MobileSidebar>
+      <MobileSidebar ></MobileSidebar>
     </>
   )
 }

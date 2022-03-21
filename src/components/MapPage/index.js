@@ -1,10 +1,10 @@
 import React from "react"
 import MapComponent from "./mapComponent"
 
-const MapPage = ({ showMarkers, setBooleanMarker }) => {
+const MapPage = () => {
 
   return (
-    <MapComponent showMarkers={showMarkers} setBooleanMaerker={setBooleanMarker}></MapComponent>
+    <MapComponent></MapComponent>
   )
 }
 

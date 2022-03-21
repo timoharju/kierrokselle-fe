@@ -3,7 +3,7 @@ import getMarkers from "../../services/mapService"
 
 import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from "react-leaflet"
 
-const MapComponent = ({ showMarkers }) => {
+const MapComponent = () => {
 
   const [markers, setMarkers] = useState([])
 
@@ -23,7 +23,7 @@ const MapComponent = ({ showMarkers }) => {
     }
     printMarker()
     console.log("render")
-  },[showMarkers])
+  },[])
 
   return (
     <MapContainer className="relative md:h-screen min-h-[100vh] z-0 flex-1" zoomControl={false} center={defaultCenter} zoom={defaultZoom} scrollWheelZoom={true}>
