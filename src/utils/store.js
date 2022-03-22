@@ -3,7 +3,7 @@ import sidebarReducer from "../reducers/sidebarReducer"
 import thunk from "redux-thunk"
 
 const allReducers = combineReducers({
-  isToggled:sidebarReducer
+  isToggled : sidebarReducer
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
