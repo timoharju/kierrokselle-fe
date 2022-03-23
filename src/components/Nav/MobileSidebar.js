@@ -8,7 +8,7 @@ const MobileSidebar = () => {
   const dispatch = useDispatch()
   const isToggled = useSelector(state => state.isToggled)
   return (
-    <div className="bg-gray-800 absolute text-gray-100 z-10 flex w-screen justify-between md:hidden">
+    <div className="bg-gray-800 absolute text-gray-100 z-50 flex w-screen justify-between md:hidden">
       <Link to="/">
         <p className="block p-4 text-white font-bold">Kierrokselle</p>
       </Link>

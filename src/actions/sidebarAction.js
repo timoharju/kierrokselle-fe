@@ -3,10 +3,9 @@ export const toggleSidebar= (state) => {
     return {
       type: "SHOW"
     }
-  else
-    return {
-      type: "HIDE"
-    }
+  return {
+    type: "HIDE"
+  }
 
 }
 
