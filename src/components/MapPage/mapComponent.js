@@ -43,7 +43,9 @@ const MapComponent = () => {
               marker.lat
             ]}
           >
-            <Popup>{marker.courseName}</Popup>
+            <Popup>{marker.courseName} <br></br>
+              <a className="text-size">Väyliä: </a> {marker.holeCount}
+            </Popup>
           </Marker>
         )}
         <LocateUser></LocateUser>
