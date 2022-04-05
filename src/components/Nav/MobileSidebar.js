@@ -10,7 +10,7 @@ const MobileSidebar = () => {
   return (
     <div className="bg-gray-800 absolute text-gray-100 z-50 flex w-screen justify-between md:hidden">
       <Link to="/">
-        <p className="block p-4 text-white font-bold">Kierrokselle</p>
+        <p className="block text-2xl p-4 text-white font-bold">Kierrokselle.com</p>
       </Link>
       <button onClick={() => dispatch(toggleSidebar(isToggled))} className="mobile-menu-button p-4 focus:outline-none focus:bg-gray-700">
         <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -19,6 +19,5 @@ const MobileSidebar = () => {
       </button>
     </div>
   )
-
 }
 export default MobileSidebar

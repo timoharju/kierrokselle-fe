@@ -9,30 +9,29 @@ const ToggleableSidebar = () => {
       </Link>
       <nav>
         <Link to="/map">
-          <li className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white">
+          <li className="block text-3xl py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:underline hover:text-white">
         Kartta
           </li>
         </Link>
         <Link to="/">
-          <li className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white">
+          <li className="block text-3xl py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:underline hover:text-white">
         Radat
           </li>
         </Link>
         <Link to="/">
-          <li className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white">
+          <li className="block text-3xl py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:underline hover:text-white">
         Tietoa
           </li>
         </Link>
         <Link to="/">
-          <li className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white">
+          <li className="block text-3xl py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:underline hover:text-white">
         Ota yhteyttä
           </li>
         </Link>
       </nav>
-
+      <footer className="absolute bottom-4 text-sm left-2 w-full">© 2022 Kierrokselle.com</footer>
     </div>
   )
-
 }
 
 export default ToggleableSidebar
