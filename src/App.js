@@ -7,8 +7,8 @@ import Nav from "./components/Nav"
 const App = () => {
 
   return (
-    <div className="bg-black h-screen flex-none   ">
-      <div className="h-screen md:flex flex-1 ">
+    <div className="bg-black h-screen flex-none">
+      <div className="h-screen md:flex flex-1">
         <Nav></Nav>
         <Routes>
           <Route
