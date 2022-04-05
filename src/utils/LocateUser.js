@@ -1,7 +1,6 @@
 import { useEffect } from "react"
 import { useMap } from "react-leaflet"
 
-
 const LocateUser = () => {
 
   const map = useMap()
