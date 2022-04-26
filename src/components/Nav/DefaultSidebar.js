@@ -34,7 +34,7 @@ const DefaultSidebar = () => {
           </li>
         </Link>
       </nav>
-      <footer className="absolute bottom-7 text-sm left-2 w-full">{process.env.NODE_ENV} environment</footer>
+      <footer className="absolute bottom-7 text-sm left-2 w-full">{process.env.NODE_ENV !== "production" ? <p>{process.env.NODE_ENV.toUpperCase()} ENVIRONMENT</p> : <></>}</footer>
       <footer className="absolute bottom-4 text-sm left-2 w-full">© 2022 Kierrokselle.com</footer>
     </div>
   )
