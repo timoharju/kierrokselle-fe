@@ -1,55 +1,62 @@
 import React, { useEffect, useState } from "react"
-import getMarkers from "../../services/mapService"
-import LocateUser from "../../utils/LocateUser.js"
-import Modal from "./Modal"
+import getCourses from "../../services/mapService"
+import LocateUser from "../../utils/location/LocateUser.js"
+import GreyModal from "./GreyModal"
+import { useSelector } from "react-redux"
+import basketIcon from "../../icons/basketIcon"
+import LocateControl from "../../utils/location/LocateControl"
 
 import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from "react-leaflet"
 
 
 const MapComponent = () => {
 
-  const [markers, setMarkers] = useState([])
+  const [courses, setCourses] = useState([])
+  const userLocationCoordinates = useSelector(state => state.userLocationCoordinates)
+  const greyModalIsClosed = useSelector(state => state.greyModalIsClosed)
+  const userIsLocated = useSelector(state => state.userIsLocated)
 
-  const defaultCenter = [64, 25]
-  const defaultZoom = [10]
+  const defaultCenter = userIsLocated ? [userLocationCoordinates[0].lat, userLocationCoordinates[0].lng] : [64, 25]
+  const defaultZoom = 12
 
   useEffect(() => {
-    const marker = getMarkers()
+    const courseList = getCourses()
       .then((courseName) => {
         return courseName
       })
 
-    const printMarker = async () => {
-      const a = await marker
-      setMarkers([...markers, ...a])
+    const updateCoursesList = async () => {
+      const courseListFromDB = await courseList
+      setCourses([...courses, ...courseListFromDB])
     }
-    printMarker()
+    updateCoursesList()
   },[])
-
-
 
   return (
     <>
-      <Modal></Modal>
+      <GreyModal></GreyModal>
       <MapContainer className="relative md:h-screen min-h-[100vh] z-0 flex-1" zoomControl={false} center={defaultCenter} zoom={defaultZoom} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {markers.length > 0 && markers.map((marker) =>
-          <Marker key={marker.id}
+        {courses.length > 0 && courses.map((course) =>
+          <Marker key={course.id}
             position={[
-              marker.lon,
-              marker.lat
+              course.lon,
+              course.lat
             ]}
+            icon={basketIcon}
           >
-            <Popup>{marker.courseName} <br></br>
-              <a className="text-size">Väyliä: </a> {marker.holeCount}
+            <Popup>{course.courseName} <br></br>
+              <a className="text-size">Väyliä: </a> {course.holeCount} <br></br>
+              <a className="text-size">Haastavuus: </a> {course.courseDifficulty}
             </Popup>
           </Marker>
         )}
-        <LocateUser></LocateUser>
+        {greyModalIsClosed ? (<LocateUser></LocateUser>) : ("")}
         <ZoomControl position="bottomright"></ZoomControl>
+        <LocateControl locatePosition="bottomright"></LocateControl>
       </MapContainer>
     </>
   )

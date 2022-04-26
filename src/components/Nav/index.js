@@ -7,11 +7,12 @@ import { useSelector } from "react-redux"
 
 const Nav = () => {
 
-  const isToggled = useSelector(state => state.isToggled)
+  const sidebarIsToggled = useSelector(state => state. sidebarIsToggled)
+
   return (
     <>
-      {isToggled ? ( <DefaultSidebar></DefaultSidebar>) : (
-        <ToggleableSidebar></ToggleableSidebar>
+      { sidebarIsToggled ? (  <ToggleableSidebar></ToggleableSidebar> ) : (
+        <DefaultSidebar></DefaultSidebar>
       )}
       <MobileSidebar ></MobileSidebar>
     </>

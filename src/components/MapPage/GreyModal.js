@@ -1,6 +1,6 @@
 import React from "react"
 import reactDom from "react-dom"
-import MapButton from "../LandingPage/MapButton"
+import MapButton from "./MapButton"
 import { useSelector } from "react-redux"
 
 const MODAL_STYLE = {
@@ -28,13 +28,13 @@ const OVERLAY_STYLE = {
 
 const Modal = () => {
 
-  const isClicked = useSelector(state => state.isClicked)
+  const greyModalIsClosed = useSelector(state => state.greyModalIsClosed)
 
   return reactDom.createPortal(
     <>
-      {isClicked ? ( <><div style={OVERLAY_STYLE}></div><div style={MODAL_STYLE}>
+      {greyModalIsClosed ? ( "" ) : (<><div style={OVERLAY_STYLE}></div><div style={MODAL_STYLE}>
         <MapButton></MapButton>
-      </div></> ) : ("") }
+      </div></>) }
     </>,
     document.getElementById("portal")
   )
