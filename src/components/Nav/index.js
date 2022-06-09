@@ -4,10 +4,9 @@ import DefaultSidebar from "./DefaultSidebar"
 import ToggleableSidebar from "./ToggleableSidebar"
 import { useSelector } from "react-redux"
 
-
 const Nav = () => {
 
-  const sidebarIsToggled = useSelector(state => state. sidebarIsToggled)
+  const sidebarIsToggled = useSelector(state => state.sidebarIsToggled)
 
   return (
     <>
