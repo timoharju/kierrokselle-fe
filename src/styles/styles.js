@@ -25,7 +25,6 @@ export const OVERLAY_STYLE_WO_BG = {
   left: "0vh",
   right: "0",
   bottom: "0",
-  backgroundColor: "rgba(0, 0, 0, .7)",
   zIndex: 10
 }
 
