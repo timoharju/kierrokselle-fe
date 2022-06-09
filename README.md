@@ -22,6 +22,8 @@
 
 ## About
 
+Kierrokselle is a single page disc golf web application. The purpose of the web application is to have a easy way to discover nearby disc golf courses.
+
 This project is initialized with Create React App. It uses React, Redux for state management and Taiwind for styling.
 
 All the other dependencies can be seen in the package.json file.
