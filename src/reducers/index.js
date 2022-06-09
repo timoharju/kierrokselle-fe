@@ -1,14 +1,48 @@
 import * as actions from "../actions/actionTypes"
 
-export const greyModalReducer = ( state=false, action ) => {
+export const mapButtonOverlayReducer = ( state=false, action ) => {
   switch(action.type) {
-    case actions.GREYMODAL_CLOSE:
+    case actions.MAPBUTTON_OVERLAY_CLOSE:
       return true
+    case actions.MAPBUTTON_OVERLAY_OPEN:
+      return false
     default:
       return state
   }
 }
 
+export const courseModalReducer = (state=true, action) => {
+  switch(action.type) {
+    case actions.COURSEMODAL_CLOSE:
+      return true
+    case actions.COURSEMODAL_OPEN:
+      return false
+    default:
+      return state
+  }
+}
+
+export const courseInfoModalReducer = (state=true, action) => {
+  switch(action.type) {
+    case actions.COURSEINFO_MODAL_CLOSE:
+      return true
+    case actions.COURSEINFO_MODAL_OPEN:
+      return false
+    default:
+      return state
+  }
+}
+
+export const infoModalReducer = (state=true, action) => {
+  switch(action.type) {
+    case actions.INFOMODAL_CLOSE:
+      return true
+    case actions.INFOMODAL_OPEN:
+      return false
+    default:
+      return state
+  }
+}
 export const sidebarReducer = ( state=false, action ) => {
   switch(action.type) {
     case actions.SIDEBAR_HIDE:

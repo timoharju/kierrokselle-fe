@@ -1,7 +1,7 @@
 import React from "react"
 import MapComponent from "./MapComponent"
 
-const MapPage = () => {
+const Map = () => {
 
   return (
     <MapComponent></MapComponent>
@@ -9,4 +9,4 @@ const MapPage = () => {
 }
 
 
-export default MapPage
+export default Map

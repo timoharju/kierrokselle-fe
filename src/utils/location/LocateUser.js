@@ -3,7 +3,6 @@ import { useMap } from "react-leaflet"
 import { addUserCoordinates, findUserLocationStatus } from "../../actions"
 import { useDispatch, useSelector } from "react-redux"
 
-
 const LocateUser = () => {
 
   const dispatch = useDispatch()
@@ -15,7 +14,6 @@ const LocateUser = () => {
       if (userIsLocated === false) {
         map.flyTo(event.latlng, 12)
         dispatch(addUserCoordinates(event.latlng.lat, event.latlng.lng))
-        console.log("user coordinates added")
         dispatch(findUserLocationStatus(userIsLocated))
       }
     })

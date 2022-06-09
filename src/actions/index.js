@@ -1,9 +1,47 @@
 import * as actions from "./actionTypes"
 
-export const closeGreyModal = () => {
+export const toggleMapButtonOverlay = (state) => {
+  if(state===false)
+    return {
+      type: actions.MAPBUTTON_OVERLAY_CLOSE
+    }
   return {
-    type: actions.GREYMODAL_CLOSE
+    type: actions.MAPBUTTON_OVERLAY_OPEN
   }
+
+}
+
+export const toggleCourseModal = (state) => {
+  if(state===false)
+    return {
+      type: actions.COURSEMODAL_CLOSE
+    }
+  return {
+    type: actions.COURSEMODAL_OPEN
+  }
+
+}
+
+export const toggleCourseInfoModal = (state) => {
+  if(state===false)
+    return {
+      type: actions.COURSEINFO_MODAL_CLOSE
+    }
+  return {
+    type: actions.COURSEINFO_MODAL_OPEN
+  }
+
+}
+
+export const toggleInfoModal = (state) => {
+  if(state===false)
+    return {
+      type: actions.INFOMODAL_CLOSE
+    }
+  return {
+    type: actions.INFOMODAL_OPEN
+  }
+
 }
 
 export const toggleSidebar = (state) => {

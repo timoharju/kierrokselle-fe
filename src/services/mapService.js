@@ -2,9 +2,12 @@ import axios from "axios"
 
 const baseUrl = "http://localhost:8080/api/v1"
 
-const getCourses = async () => {
+export const getCourses = async () => {
   const response = await axios.get(`${baseUrl}/courses/`)
   return response.data
 }
 
-export default getCourses
+export const getCourseById = async (id) => {
+  const response = await axios.get(`${baseUrl}/courses/${id}`)
+  return response.data
+}
